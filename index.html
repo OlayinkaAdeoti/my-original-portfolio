@@ -6,12 +6,16 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header>
-    <div class="navbar">
+    <nav class="navbar">
       <h2>Portfolio.</h2>
-          <nav >
+          <div class="nav-links" id="navLinks">
+            <i class="fas fa-times hamburger" onclick="hideMenu()"></i>
               <ul>
                  <li>  <a href="./index.html">Home</a></li>
                  <li>  <a href="#">About</a></li>
@@ -19,21 +23,10 @@
                   <li><a href="#">Portfolio</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
-         </nav>
-             <button class="hamburger">
-               <div class="bar"></div>
-              </button>
-  </div>    
+          </div>
+                <i class="fas fa-bars hamburger" onclick="showMenu()"></i>
+    </nav>    
   </header>
-    
-     <nav class="mobile-nav">
-      <a href="./index.html">Home</a>
-       <a href="#">About</a>
-      <a href="#">Services</a>
-       <a href="#">Portfolio</a>
-       <a href="#">Contact</a>
-     </nav>
-    
      <div class="first-section"> 
         <div class="left-side">
           <h2 class="paragraph">Hello it's me</h2>
@@ -171,13 +164,14 @@
     </div>
 </footer>
 <script>
-    const menu_btn = document.querySelector('.hamburger');
-    const mobile_menu = document.querySelector('.mobile-nav');
+    var navLinks = document.getElementById("navLinks");
 
-    menu_btn.addEventListener('click', function() {
-      menu_btn.classList.toggle('is-active');
-      mobile_menu.classList.toggle('is-active');
-    });
+function showMenu() {
+    navLinks.style.right = "0";
+}
+function hideMenu() {
+    navLinks.style.right = "-200px";
+}
 </script>
 
 </body>
